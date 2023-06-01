@@ -15,11 +15,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          <tr *ngFor="let producto of productosSeleccionados">
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.producto }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>{{ producto.cantidad }}</td>
             <td>
               <button class="btn btn-warning">Editar</button>
               <button class="btn btn-danger">Eliminar</button>

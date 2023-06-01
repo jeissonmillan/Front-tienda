@@ -1,11 +1,17 @@
+import { Component, OnInit } from '@angular/core';
+import { ProductoSeleccionadoService } from '../../producto-seleccionado.service';
 
-import { Component } from '@angular/core';
-import { AgregarComponent } from '../agregar/agregar.component';
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
-export class ListarComponent {
+export class ListarComponent implements OnInit {
+  productosSeleccionados: { id: number, producto: string, precio: number, cantidad: number }[] = [];
 
+  constructor(private productoSeleccionadoService: ProductoSeleccionadoService) {}
+
+  ngOnInit() {
+    this.productosSeleccionados = this.productoSeleccionadoService.getProductosSeleccionados();
+  }
 }

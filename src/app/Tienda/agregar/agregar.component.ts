@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TiendaService } from '../../tienda.service';
+import { ProductoSeleccionadoService } from '../../producto-seleccionado.service';
 
 @Component({
   selector: 'app-agregar',
@@ -8,9 +9,11 @@ import { TiendaService } from '../../tienda.service';
 })
 export class AgregarComponent {
   searchTerm: string = '';
-  productosSeleccionados: { id: number, producto: string, precio: number, cantidad: number }[] = [];
 
-  constructor(public tiendaService: TiendaService) {}
+  constructor(
+    public tiendaService: TiendaService,
+    private productoSeleccionadoService: ProductoSeleccionadoService
+  ) {}
 
   get filteredProductos() {
     return this.tiendaService.productos.filter(producto =>
@@ -18,11 +21,13 @@ export class AgregarComponent {
     );
   }
 
-  agregarProducto(producto: { id: number, producto: string, precio: number }) {
-    const productoSeleccionado = {
-      ...producto,
-      cantidad: 1
-    };
-    this.productosSeleccionados.push(productoSeleccionado);
+  agregarProducto(producto: { id: number, producto: string, precio: number, cantidad: number }) {
+    if (producto.cantidad > 0) {
+      const productoSeleccionado = {
+        ...producto,
+        cantidad: producto.cantidad
+      };
+      this.productoSeleccionadoService.agregarProductoSeleccionado(productoSeleccionado);
+    }
   }
 }
