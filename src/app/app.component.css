@@ -6,13 +6,14 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #ffee00;
+  background-color: #2ac5c5;
   color: rgb(0, 0, 0);
   font-weight: 600;
 }
 .toolbar img.logo-principal {
   vertical-align: middle;
   margin-left: 30px;
+  width: 60px;
 }
 .toolbar span.Bienvenido {
   font-size: 32px;
@@ -36,3 +37,42 @@
   flex-direction: column;
   align-items: center;
 }/*# sourceMappingURL=style.css.map */
+button.btn.btn-info.pagar {
+  position: relative;
+
+  left: 325px;
+  color: white;
+  background-color: #0ba026;
+  box-shadow: none !important;
+}
+button.btn.btn-info.carrito {position: relative;right: 84%;}
+
+.footer {
+  background-color: #f2f2f2;
+  padding: 0px 0;
+  text-align: center;
+  position: relative;
+  bottom: -226px;
+  border-top: 1px solid #7b7b78;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 24px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+.footer-container p {
+  margin: 10px 0 0 0;
+}

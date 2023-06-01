@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProductoSeleccionadoService } from '../../producto-seleccionado.service';
 
 @Component({
@@ -6,12 +6,14 @@ import { ProductoSeleccionadoService } from '../../producto-seleccionado.service
   templateUrl: './listar.component.html',
   styleUrls: ['./listar.component.css']
 })
-export class ListarComponent implements OnInit {
+export class ListarComponent {
   productosSeleccionados: { id: number, producto: string, precio: number, cantidad: number }[] = [];
 
-  constructor(private productoSeleccionadoService: ProductoSeleccionadoService) {}
-
-  ngOnInit() {
+  constructor(private productoSeleccionadoService: ProductoSeleccionadoService) {
     this.productosSeleccionados = this.productoSeleccionadoService.getProductosSeleccionados();
+  }
+
+  eliminarProducto(producto: { id: number, producto: string, precio: number, cantidad: number }) {
+    this.productoSeleccionadoService.eliminarProductoSeleccionado(producto);
   }
 }

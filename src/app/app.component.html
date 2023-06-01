@@ -2,9 +2,9 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img class="logo-principal"
-    src="https://exitocol.vtexassets.com/assets/vtex.file-manager-graphql/images/d34d990a-6e51-438f-b163-438438a97a6e___50dc4199e8020554de79a91123175966.svg"
+    src="https://th.bing.com/th/id/OIP.KXFMdp0j-T19eLtZbCag8wHaHa?pid=ImgDet&rs=1"
   />
-  <span class="Bienvenido">Bienvenido</span>
+  <span class="Bienvenido">Bienvenido a tu barrio</span>
 
 </div>
 
@@ -12,14 +12,9 @@
 
   <!-- Highlight Card -->
   <div class="Container-menu">
-  <button (click)="Listar()" class="btn btn-info">CARRITO DE COMPRAS</button>
-  <button (click)="Nuevo()" class="btn btn-info">AGREGAR</button>
-
-
-
-
-
-
+  <button (click)="Listar()" class="btn btn-info carrito">CARRITO DE COMPRAS</button>
+  <button (click)="Nuevo()" class="btn btn-info agregar">AGREGAR</button>
+  <button (click)="Editar()" class="btn btn-info pagar">PAGAR</button>
   </div>
 
   <!-- Resources -->
@@ -29,3 +24,14 @@
 
 
 <router-outlet></router-outlet>
+<div class="footer">
+  <div class="footer-container">
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>&copy; 2023 Mi Sitio Web. Todos los derechos reservados.</p>
+  </div>
+</div>
