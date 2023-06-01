@@ -6,15 +6,14 @@ import { AppComponent } from './app.component';
 import { ListarComponent } from './Persona/listar/listar.component';
 import { AgregarComponent } from './Persona/agregar/agregar.component';
 import { EditarComponent } from './Persona/editar/editar.component';
-import { ServiceComponent } from './Service/service/service.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarComponent,
     AgregarComponent,
-    EditarComponent,
-    ServiceComponent
+    EditarComponent
   ],
   imports: [
     BrowserModule,
