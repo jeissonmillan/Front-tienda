@@ -15,21 +15,10 @@ export class AgregarComponent {
   ];
 
   searchTerm: string = '';
-  carritoCompras: any[] = [];
 
   get filteredProductos() {
     return this.productos.filter(producto =>
       producto.producto.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
-  }
-
-  agregarAlCarrito(producto: any, cantidad: number) {
-    const productoCarrito = {
-      id: producto.id,
-      producto: producto.producto,
-      precio: producto.precio,
-      cantidad: cantidad
-    };
-    this.carritoCompras.push(productoCarrito);
   }
 }

@@ -11,17 +11,13 @@
             <th>ID</th>
             <th>PRODUCTO</th>
             <th>PRECIO</th>
-            <th>CANTIDAD</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let producto of filteredProductos; let i = index">
+          <tr *ngFor="let producto of filteredProductos">
             <td>{{ producto.id }}</td>
             <td>{{ producto.producto }}</td>
             <td>{{ producto.precio }}</td>
-            <td><input type="number" [(ngModel)]="producto.cantidad"></td>
-            <td><button (click)="agregarAlCarrito(producto, producto.cantidad)">Agregar</button></td>
           </tr>
         </tbody>
       </table>
